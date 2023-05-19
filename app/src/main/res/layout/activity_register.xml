@@ -5,44 +5,91 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff9e3"
-    tools:context=".Login">
-
-    <TextView
-        android:id="@+id/lblTitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="75dp"
-        android:layout_marginTop="92dp"
-        android:layout_marginEnd="75dp"
-        android:fontFamily="@font/bowlby_one"
-        android:text="@string/title"
-        android:textSize="48sp"
-        android:textColor="@android:color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".Register">
 
     <TextView
         android:id="@+id/lblWelcome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="75dp"
+        android:fontFamily="@font/bowlby_one"
+        android:text="@string/txtRegister"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="75dp"
+        android:fontFamily="@font/bowlby_one"
+        android:text="@string/txtName"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblWelcome" />
+
+    <EditText
+        android:id="@+id/txtName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="75dp"
+        android:textColor="@android:color/black"
+        android:ems="10"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="319dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblName" />
+
+    <TextView
+        android:id="@+id/lblAge"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="75dp"
         android:fontFamily="@font/bowlby_one"
-        android:text="@string/txtWelcome"
-        android:textSize="24sp"
+        android:text="@string/txtAge"
         android:textColor="@android:color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/txtName" />
+
+    <EditText
+        android:id="@+id/txtAge"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="75dp"
+        android:textColor="@android:color/black"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="319dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblAge" />
 
     <TextView
         android:id="@+id/lblMail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="75dp"
         android:fontFamily="@font/bowlby_one"
         android:text="@string/txtMail"
@@ -50,7 +97,7 @@
         android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblWelcome" />
+        app:layout_constraintTop_toBottomOf="@+id/txtAge" />
 
     <EditText
         android:id="@+id/txtMail"
@@ -84,7 +131,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtMail" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/txtPass"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
@@ -99,6 +146,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblPass" />
 
+    <TextView
+        android:id="@+id/lblCPass"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="75dp"
+        android:fontFamily="@font/bowlby_one"
+        android:text="@string/txtCPass"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPass" />
+
+    <EditText
+        android:id="@+id/txtCPass"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="75dp"
+        android:ems="10"
+        android:textColor="@android:color/black"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="82dp"
+        tools:layout_editor_absoluteY="424dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblCPass" />
+
     <Button
         android:id="@+id/btnLogin"
         android:textColor="@android:color/white"
@@ -110,15 +188,15 @@
         android:backgroundTint="@color/yellow"
         android:elevation="5dp"
         android:fontFamily="@font/bowlby_one"
-        android:text="Iniciar\nsesión"
+        android:text="@string/txtRegister"
         android:textSize="24sp"
         app:cornerRadius="15dp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintEnd_toEndOf="@+id/txtCPass"
+        app:layout_constraintStart_toStartOf="@+id/txtCPass"
+        app:layout_constraintTop_toBottomOf="@+id/txtCPass" />
 
     <Button
-        android:id="@+id/btnCreateAccount"
+        android:id="@+id/btnCancelar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -126,12 +204,12 @@
         android:layout_marginEnd="25dp"
         android:background="@android:color/transparent"
         android:fontFamily="@font/bowlby_one"
-        android:onClick="Register"
-        android:text="No tengo cuenta"
+        android:onClick="back"
+        android:text="@string/txtCancel"
         android:textColor="@android:color/black"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
+        app:layout_constraintEnd_toEndOf="@+id/txtCPass"
+        app:layout_constraintStart_toStartOf="@+id/txtCPass"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

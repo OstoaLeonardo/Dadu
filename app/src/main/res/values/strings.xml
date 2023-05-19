@@ -14,4 +14,10 @@
     <string name="txtWelcome">Hola de nuevo!</string>
     <string name="txtMail">Correo electronico:</string>
     <string name="txtPass">Contraseña:</string>
+    <string name="back"><![CDATA[< Volver]]></string>
+    <string name="txtCancel">Cancelar</string>
+    <string name="txtCPass">Confirmar contraseña:</string>
+    <string name="txtName">Nombre de usuario:</string>
+    <string name="txtRegister">Crear cuenta</string>
+    <string name="txtAge">Edad:</string>
 </resources>
