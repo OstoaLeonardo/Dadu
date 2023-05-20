@@ -62,11 +62,14 @@
     <color name="md_theme_dark_outlineVariant">#44474E</color>
     <color name="md_theme_dark_scrim">#000000</color>
 
-    <color name="black">#FF000000</color>
+    <color name="black">#000000</color>
+    <color name="black_10">#1A000000</color>
+    <color name="dark_charcoal">#323232</color>
     <color name="blue_midnight">#1F2A3F</color>
     <color name="gray">#464646</color>
     <color name="white">#FFFFFFFF</color>
     <color name="white_15">#26FFFFFF</color>
+    <color name="cosmic_latte">#FFF9E3</color>
 
     <color name="blue">#4685FF</color>
     <color name="green">#49E78C</color>

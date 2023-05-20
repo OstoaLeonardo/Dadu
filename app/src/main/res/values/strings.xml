@@ -8,6 +8,8 @@
     <string name="username">Martin</string>
     <string name="number">0</string>
     <string name="play">Jugar</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="no_account">No tengo cuenta</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title">Dadu</string>
@@ -18,6 +20,7 @@
     <string name="txtCancel">Cancelar</string>
     <string name="txtCPass">Confirmar contraseña:</string>
     <string name="txtName">Nombre de usuario:</string>
+    <string name="txtSignUp">Registrate</string>
     <string name="txtRegister">Crear cuenta</string>
     <string name="txtAge">Edad:</string>
 </resources>

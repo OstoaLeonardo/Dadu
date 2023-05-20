@@ -30,19 +30,19 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/bowlby_one"
+                    android:fontFamily="@font/passion_one_bold"
                     android:text="@string/hello"
                     android:textColor="@color/white"
-                    android:textSize="24sp" />
+                    android:textSize="34sp" />
 
                 <TextView
                     android:id="@+id/tvUsername"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/bowlby_one"
+                    android:fontFamily="@font/passion_one_bold"
                     android:text="@string/username"
                     android:textColor="@color/white"
-                    android:textSize="24sp" />
+                    android:textSize="34sp" />
 
             </LinearLayout>
 
@@ -72,10 +72,10 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_card_money"
                 android:drawablePadding="10dp"
-                android:fontFamily="@font/bowlby_one"
+                android:fontFamily="@font/passion_one_bold"
                 android:text="@string/number"
                 android:textColor="?android:attr/colorBackground"
-                android:textSize="16sp"
+                android:textSize="20sp"
                 app:drawableStartCompat="@drawable/star" />
 
             <Space
@@ -88,10 +88,10 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_card_money"
                 android:drawablePadding="10dp"
-                android:fontFamily="@font/bowlby_one"
+                android:fontFamily="@font/passion_one_bold"
                 android:text="@string/number"
                 android:textColor="?android:attr/colorBackground"
-                android:textSize="16sp"
+                android:textSize="20sp"
                 app:drawableStartCompat="@drawable/coin" />
 
         </LinearLayout>
