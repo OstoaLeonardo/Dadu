@@ -10,6 +10,14 @@
     <string name="play">Jugar</string>
     <string name="login">Iniciar sesión</string>
     <string name="no_account">No tengo cuenta</string>
+    <!-- Games -->
+    <string name="choose_game">Elige un modo de juego</string>
+    <string name="random">Aleatorio</string>
+    <string name="mathematics">Matematicas</string>
+    <string name="geography">Geografia</string>
+    <string name="history">Historia</string>
+    <string name="sports">Deportes</string>
+    <string name="natural_sciences">Ciencias</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title">Dadu</string>

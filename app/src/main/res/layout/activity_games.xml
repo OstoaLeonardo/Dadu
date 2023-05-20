@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_15"
+    tools:context=".Games">
+
+    <LinearLayout
+        android:id="@+id/llTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="30dp"
+        android:paddingVertical="20dp">
+
+        <Button
+            android:id="@+id/btnBack"
+            style="?attr/materialIconButtonFilledTonalStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/arrow_small_left" />
+
+        <TextView
+            android:id="@+id/lblMail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="@string/choose_game"
+            android:textAlignment="textEnd"
+            android:textAppearance="@style/Body" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/llTopBar" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/cardAllSubjects"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_card_subjects"
+                android:backgroundTint="@color/dark_charcoal"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/passion_one_bold"
+                        android:text="@string/random"
+                        android:textColor="@color/white"
+                        android:textSize="34sp" />
+
+                </LinearLayout>
+
+                <Button
+                    style="?attr/materialIconButtonFilledStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/transparent"
+                    app:icon="@drawable/angle_small_right" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardMathematics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_card_subjects"
+                android:backgroundTint="@color/red"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/passion_one_bold"
+                        android:text="@string/mathematics"
+                        android:textColor="@color/white"
+                        android:textSize="34sp" />
+
+                </LinearLayout>
+
+                <Button
+                    style="?attr/materialIconButtonFilledStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/transparent"
+                    app:icon="@drawable/angle_small_right" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardGeography"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_card_subjects"
+                android:backgroundTint="@color/green"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/passion_one_bold"
+                        android:text="@string/geography"
+                        android:textColor="@color/white"
+                        android:textSize="34sp" />
+
+                </LinearLayout>
+
+                <Button
+                    style="?attr/materialIconButtonFilledStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/transparent"
+                    app:icon="@drawable/angle_small_right" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_card_subjects"
+                android:backgroundTint="@color/yellow"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/passion_one_bold"
+                        android:text="@string/history"
+                        android:textColor="@color/white"
+                        android:textSize="34sp" />
+
+                </LinearLayout>
+
+                <Button
+                    style="?attr/materialIconButtonFilledStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/transparent"
+                    app:icon="@drawable/angle_small_right" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardSports"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_card_subjects"
+                android:backgroundTint="@color/blue"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/passion_one_bold"
+                        android:text="@string/sports"
+                        android:textColor="@color/white"
+                        android:textSize="34sp" />
+
+                </LinearLayout>
+
+                <Button
+                    style="?attr/materialIconButtonFilledStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/transparent"
+                    app:icon="@drawable/angle_small_right" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardNatural_Sciences"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_card_subjects"
+                android:backgroundTint="@color/purple"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/passion_one_bold"
+                        android:text="@string/natural_sciences"
+                        android:textColor="@color/white"
+                        android:textSize="34sp" />
+
+                </LinearLayout>
+
+                <Button
+                    style="?attr/materialIconButtonFilledStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/transparent"
+                    app:icon="@drawable/angle_small_right" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
