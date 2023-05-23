@@ -16,15 +16,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="50dp"
-            android:text="Recuperar contraseña"
+            android:layout_marginBottom="40dp"
+            android:text="@string/reset_pass"
             android:textAppearance="@style/Title" />
+
+        <TextView
+            android:id="@+id/lblInstruction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblWelcome"
+            android:layout_marginBottom="40dp"
+            android:text="@string/instruction_email"
+            android:justificationMode="inter_word"
+            android:textAppearance="@style/Body" />
 
         <TextView
             android:id="@+id/lblMail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/lblWelcome"
+            android:layout_below="@id/lblInstruction"
             android:layout_marginBottom="20dp"
             android:text="@string/txtMail"
             android:textAppearance="@style/Body" />
@@ -35,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/lblMail"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/bg_edittext"
+            android:background="@drawable/bg_edit_text"
             android:hint="@string/txtMail"
             android:inputType="textEmailAddress"
             android:textAppearance="@style/TextEdit"
@@ -47,9 +57,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/txtMail"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/bg_textbutton"
-            android:text="Tengo un código" />
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/bg_text_button"
+            android:text="@string/have_a_code" />
 
         <Button
             android:id="@+id/btnRecovery"
@@ -57,10 +67,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/btnCode"
-            android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp"
             android:background="@drawable/bg_button"
-            android:text="Recuperar" />
+            android:text="@string/get_code" />
 
         <Button
             android:id="@+id/btnCancelar"
@@ -68,8 +77,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/btnRecovery"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/bg_textbutton"
+            android:background="@drawable/bg_text_button"
             android:text="@string/txtCancel" />
 
     </RelativeLayout>

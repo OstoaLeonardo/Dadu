@@ -17,14 +17,24 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="50dp"
-            android:text="Recuperar contraseña"
+            android:text="@string/change_pass"
             android:textAppearance="@style/Title" />
+
+        <TextView
+            android:id="@+id/lblInstruction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblWelcome"
+            android:layout_marginBottom="40dp"
+            android:text="@string/instruction_pass"
+            android:justificationMode="inter_word"
+            android:textAppearance="@style/Body" />
 
         <TextView
             android:id="@+id/lblPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/lblWelcome"
+            android:layout_below="@id/lblInstruction"
             android:layout_marginBottom="20dp"
             android:text="@string/txtPass"
             android:textAppearance="@style/Body" />
@@ -35,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/lblPass"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/bg_edittext"
+            android:background="@drawable/bg_edit_text"
             android:hint="@string/txtPass"
             android:inputType="textPassword"
             android:textAppearance="@style/TextEdit"
@@ -56,7 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/lblCPass"
             android:layout_marginBottom="40dp"
-            android:background="@drawable/bg_edittext"
+            android:background="@drawable/bg_edit_text"
             android:hint="@string/txtCPass"
             android:inputType="textPassword"
             android:textAppearance="@style/TextEdit"
@@ -71,7 +81,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp"
             android:background="@drawable/bg_button"
-            android:text="Reestablecer" />
+            android:text="@string/change_pass" />
 
         <Button
             android:id="@+id/btnCancelar"
@@ -80,7 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/btnReset"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/bg_textbutton"
+            android:background="@drawable/bg_text_button"
             android:text="@string/txtCancel" />
 
     </RelativeLayout>

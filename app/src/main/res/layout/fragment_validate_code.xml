@@ -16,17 +16,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="50dp"
-            android:text="Recuperar contraseña"
+            android:layout_marginBottom="40dp"
+            android:text="@string/reset_pass"
             android:textAppearance="@style/Title" />
+
+        <TextView
+            android:id="@+id/lblInstruction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblWelcome"
+            android:layout_marginBottom="40dp"
+            android:text="@string/instruction_code"
+            android:justificationMode="inter_word"
+            android:textAppearance="@style/Body" />
 
         <TextView
             android:id="@+id/lblMail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/lblWelcome"
+            android:layout_below="@id/lblInstruction"
             android:layout_marginBottom="20dp"
-            android:text="Código:"
+            android:text="@string/code"
             android:textAppearance="@style/Body" />
 
         <EditText
@@ -34,9 +44,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/lblMail"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/bg_edittext"
-            android:hint="@string/txtMail"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/bg_edit_text"
+            android:hint="@string/code"
             android:inputType="textEmailAddress"
             android:textAppearance="@style/TextEdit"
             android:textColor="@color/dark_charcoal" />
@@ -50,7 +60,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp"
             android:background="@drawable/bg_button"
-            android:text="Validar" />
+            android:text="@string/verify_code" />
 
         <Button
             android:id="@+id/btnCancelar"
@@ -59,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/btnRecovery"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/bg_textbutton"
+            android:background="@drawable/bg_text_button"
             android:text="@string/txtCancel" />
 
     </RelativeLayout>
