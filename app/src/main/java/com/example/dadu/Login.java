@@ -86,4 +86,9 @@ public class Login extends AppCompatActivity {
         Intent intent = new Intent(Login.this, Register.class);
         startActivity(intent);
     }
+
+    public void Recovery(View view){
+        Intent intent = new Intent(Login.this, RecoveryPass.class);
+        startActivity(intent);
+    }
 }

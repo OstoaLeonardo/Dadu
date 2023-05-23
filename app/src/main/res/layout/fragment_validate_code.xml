@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/yellow_15"
+    tools:context=".ValidateCodeFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="40dp">
+
+        <TextView
+            android:id="@+id/lblWelcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="50dp"
+            android:text="Recuperar contraseña"
+            android:textAppearance="@style/Title" />
+
+        <TextView
+            android:id="@+id/lblMail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblWelcome"
+            android:layout_marginBottom="20dp"
+            android:text="Código:"
+            android:textAppearance="@style/Body" />
+
+        <EditText
+            android:id="@+id/txtCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblMail"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_edittext"
+            android:hint="@string/txtMail"
+            android:inputType="textEmailAddress"
+            android:textAppearance="@style/TextEdit"
+            android:textColor="@color/dark_charcoal" />
+
+        <Button
+            android:id="@+id/btnRecovery"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtCode"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_button"
+            android:text="Validar" />
+
+        <Button
+            android:id="@+id/btnCancelar"
+            style="@style/TextButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnRecovery"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bg_textbutton"
+            android:text="@string/txtCancel" />
+
+    </RelativeLayout>
+
+</ScrollView>

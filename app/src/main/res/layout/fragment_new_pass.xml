@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/yellow_15"
-    tools:context=".Login">
+    tools:context=".NewPassFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -12,48 +12,19 @@
         android:padding="40dp">
 
         <TextView
-            android:id="@+id/lblTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/title"
-            android:textAppearance="@style/Title" />
-
-        <TextView
             android:id="@+id/lblWelcome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/lblTitle"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="50dp"
-            android:text="@string/txtWelcome"
-            android:textAppearance="@style/SubTitle" />
-
-        <TextView
-            android:id="@+id/lblMail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/lblWelcome"
-            android:layout_marginBottom="20dp"
-            android:text="@string/txtMail"
-            android:textAppearance="@style/Body" />
-
-        <EditText
-            android:id="@+id/txtMail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/lblMail"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/bg_edittext"
-            android:hint="@string/txtMail"
-            android:inputType="textEmailAddress"
-            android:textAppearance="@style/TextEdit"
-            android:textColor="@color/dark_charcoal" />
+            android:text="Recuperar contraseña"
+            android:textAppearance="@style/Title" />
 
         <TextView
             android:id="@+id/lblPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/txtMail"
+            android:layout_below="@id/lblWelcome"
             android:layout_marginBottom="20dp"
             android:text="@string/txtPass"
             android:textAppearance="@style/Body" />
@@ -63,46 +34,54 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/lblPass"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/bg_edittext"
             android:hint="@string/txtPass"
             android:inputType="textPassword"
             android:textAppearance="@style/TextEdit"
             android:textColor="@color/dark_charcoal" />
 
-        <Button
-            android:id="@+id/btnResetAccount"
-            style="@style/TextButtonStyle"
+        <TextView
+            android:id="@+id/lblCPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/txtPass"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/bg_textbutton"
-            android:onClick="Recovery"
-            android:text="Recuperar contraseña" />
+            android:layout_marginBottom="20dp"
+            android:text="@string/txtCPass"
+            android:textAppearance="@style/Body" />
+
+        <EditText
+            android:id="@+id/txtCPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblCPass"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/bg_edittext"
+            android:hint="@string/txtCPass"
+            android:inputType="textPassword"
+            android:textAppearance="@style/TextEdit"
+            android:textColor="@color/dark_charcoal" />
 
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/btnReset"
             style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/btnResetAccount"
+            android:layout_below="@id/txtCPass"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp"
             android:background="@drawable/bg_button"
-            android:onClick="Login"
-            android:text="@string/login" />
+            android:text="Reestablecer" />
 
         <Button
-            android:id="@+id/btnCreateAccount"
+            android:id="@+id/btnCancelar"
             style="@style/TextButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/btnLogin"
+            android:layout_below="@id/btnReset"
             android:layout_centerHorizontal="true"
             android:background="@drawable/bg_textbutton"
-            android:onClick="Register"
-            android:text="@string/no_account" />
+            android:text="@string/txtCancel" />
 
     </RelativeLayout>
 

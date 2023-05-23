@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Dadu"
         tools:targetApi="31">
         <activity
+            android:name=".RecoveryPass"
+            android:exported="false" />
+        <activity
             android:name=".Question"
             android:exported="false" />
         <activity
