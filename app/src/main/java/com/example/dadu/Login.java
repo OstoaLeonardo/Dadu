@@ -1,6 +1,8 @@
 package com.example.dadu;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -10,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.BuildConfig;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -30,6 +33,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         txtMail = findViewById(R.id.txtMail);
         txtPass = findViewById(R.id.txtPass);
+
     }
 
     private void validarUsuario(String URL){
@@ -91,4 +95,5 @@ public class Login extends AppCompatActivity {
         Intent intent = new Intent(Login.this, RecoveryPass.class);
         startActivity(intent);
     }
+
 }
