@@ -8,8 +8,29 @@
     <string name="username">Martin</string>
     <string name="number">0</string>
     <string name="play">Jugar</string>
+    <!-- Login -->
+    <string name="txtWelcome">Hola de nuevo!</string>
+    <string name="txtMail">Correo electronico:</string>
+    <string name="txtPass">Contraseña:</string>
+    <string name="forgot_pass">Olvide mi contraseña</string>
     <string name="login">Iniciar sesión</string>
     <string name="no_account">No tengo cuenta</string>
+    <string name="txtCancel">Cancelar</string>
+    <string name="txtCPass">Confirmar contraseña:</string>
+    <string name="txtName">Nombre de usuario:</string>
+    <string name="txtSignUp">Registrate</string>
+    <string name="txtRegister">Crear cuenta</string>
+    <string name="txtAge">Edad:</string>
+    <!-- Reset password -->
+    <string name="reset_pass">Restablecer contraseña</string>
+    <string name="instruction_email">Ingresa el correo electronico con el que te registraste y te enviaremos un código para restablecer tu contraseña.</string>
+    <string name="have_a_code">Tengo un código</string>
+    <string name="get_code">Obtener código</string>
+    <string name="instruction_code">Ingresa el código que te enviamos al correo electronico que ingresaste.</string>
+    <string name="code">Código:</string>
+    <string name="verify_code">Verificar codigo</string>
+    <string name="change_pass">Cambiar contraseña</string>
+    <string name="instruction_pass">Ingresa una nueva contraseña para tu cuenta.</string>
     <!-- Games -->
     <string name="choose_game">Elige un modo de juego</string>
     <string name="random">Aleatorio</string>
@@ -27,16 +48,5 @@
     <string name="answer3">Respuesta 3</string>
     <string name="answer4">Respuesta 4</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title">Dadu</string>
-    <string name="txtWelcome">Hola de nuevo!</string>
-    <string name="txtMail">Correo electronico:</string>
-    <string name="txtPass">Contraseña:</string>
     <string name="back"><![CDATA[< Volver]]></string>
-    <string name="txtCancel">Cancelar</string>
-    <string name="txtCPass">Confirmar contraseña:</string>
-    <string name="txtName">Nombre de usuario:</string>
-    <string name="txtSignUp">Registrate</string>
-    <string name="txtRegister">Crear cuenta</string>
-    <string name="txtAge">Edad:</string>
 </resources>

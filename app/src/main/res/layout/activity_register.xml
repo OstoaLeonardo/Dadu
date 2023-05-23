@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/lblName"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/bg_edittext"
+            android:background="@drawable/bg_edit_text"
             android:hint="@string/txtName"
             android:textAppearance="@style/TextEdit"
             android:textColor="@color/dark_charcoal" />
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/lblAge"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/bg_edittext"
+            android:background="@drawable/bg_edit_text"
             android:hint="@string/txtAge"
             android:inputType="number"
             android:textAppearance="@style/TextEdit"
@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/lblMail"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/bg_edittext"
+            android:background="@drawable/bg_edit_text"
             android:hint="@string/txtMail"
             android:inputType="textEmailAddress"
             android:textAppearance="@style/TextEdit"
@@ -97,7 +97,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/lblPass"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/bg_edittext"
+            android:background="@drawable/bg_edit_text"
             android:hint="@string/txtPass"
             android:inputType="textPassword"
             android:textAppearance="@style/TextEdit"
@@ -118,7 +118,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/lblCPass"
             android:layout_marginBottom="40dp"
-            android:background="@drawable/bg_edittext"
+            android:background="@drawable/bg_edit_text"
             android:hint="@string/txtCPass"
             android:inputType="textPassword"
             android:textAppearance="@style/TextEdit"
@@ -143,7 +143,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/btnRegister"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/bg_textbutton"
+            android:background="@drawable/bg_text_button"
             android:text="@string/txtCancel" />
 
     </RelativeLayout>
