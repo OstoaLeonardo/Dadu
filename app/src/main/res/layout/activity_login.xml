@@ -37,17 +37,22 @@
             android:text="@string/txtMail"
             android:textAppearance="@style/Body" />
 
+
         <EditText
             android:id="@+id/txtMail"
+            style="@style/CustomAutofillStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/lblMail"
             android:layout_marginBottom="20dp"
+            android:autoLink="none"
             android:background="@drawable/bg_edittext"
             android:hint="@string/txtMail"
             android:inputType="textEmailAddress"
             android:textAppearance="@style/TextEdit"
-            android:textColor="@color/dark_charcoal" />
+            android:textColor="@color/dark_charcoal"
+            android:textColorHighlight="@color/white"
+            android:importantForAutofill="no" />
 
         <TextView
             android:id="@+id/lblPass"
@@ -60,15 +65,18 @@
 
         <EditText
             android:id="@+id/txtPass"
+            style="@style/CustomAutofillStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/lblPass"
             android:layout_marginBottom="5dp"
+            android:autoLink="none"
             android:background="@drawable/bg_edittext"
             android:hint="@string/txtPass"
             android:inputType="textPassword"
             android:textAppearance="@style/TextEdit"
-            android:textColor="@color/dark_charcoal" />
+            android:textColor="@color/dark_charcoal"
+            android:textColorHighlight="@android:color/transparent" />
 
         <Button
             android:id="@+id/btnResetAccount"
