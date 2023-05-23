@@ -18,6 +18,14 @@
     <string name="history">Historia</string>
     <string name="sports">Deportes</string>
     <string name="natural_sciences">Ciencias</string>
+    <!-- Question -->
+    <string name="subject">Materia</string>
+    <string name="question_number">Pregunta 1</string>
+    <string name="question">Si el tiempo es oro, ¿los relojes son máquinas de hacer dinero?</string>
+    <string name="answer1">Respuesta 1</string>
+    <string name="answer2">Respuesta 2</string>
+    <string name="answer3">Respuesta 3</string>
+    <string name="answer4">Respuesta 4</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title">Dadu</string>

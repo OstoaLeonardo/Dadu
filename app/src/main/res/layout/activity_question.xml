@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="40dp"
+    tools:context=".Question">
+
+    <TextView
+        android:id="@+id/lblSubject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text="@string/subject"
+        android:textAlignment="center"
+        android:textAppearance="@style/SubTitle" />
+
+    <ImageView
+        android:id="@+id/imgQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:layout_below="@+id/lblSubject"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/bg_question_image" />
+
+    <TextView
+        android:id="@+id/lblQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgQuestion"
+        android:layout_marginBottom="50dp"
+        android:text="@string/question"
+        android:textAlignment="center"
+        android:textAppearance="@style/Body" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/lblQuestion">
+
+        <Button
+            android:id="@+id/btnAnswer1"
+            style="@style/ButtonAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_button"
+            android:text="@string/answer1" />
+
+        <Button
+            android:id="@+id/btnAnswer2"
+            style="@style/ButtonAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_button"
+            android:text="@string/answer2" />
+
+        <Button
+            android:id="@+id/btnAnswer3"
+            style="@style/ButtonAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_button"
+            android:text="@string/answer3" />
+
+        <Button
+            android:id="@+id/btnAnswer4"
+            style="@style/ButtonAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_button"
+            android:text="@string/answer4" />
+
+    </LinearLayout>
+
+</RelativeLayout>
