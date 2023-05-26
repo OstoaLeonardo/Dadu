@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="@string/title"
+            android:text="DADU"
             android:textAppearance="@style/Title" />
 
         <TextView
@@ -24,6 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/lblTitle"
+            android:layout_marginTop="0dp"
             android:layout_marginBottom="50dp"
             android:text="@string/txtWelcome"
             android:textAppearance="@style/SubTitle" />
@@ -46,7 +47,7 @@
             android:layout_below="@id/lblMail"
             android:layout_marginBottom="20dp"
             android:autoLink="none"
-            android:background="@drawable/bg_edittext"
+            android:background="@drawable/bg_edit_text"
             android:hint="@string/txtMail"
             android:inputType="textEmailAddress"
             android:textAppearance="@style/TextEdit"
@@ -71,7 +72,7 @@
             android:layout_below="@id/lblPass"
             android:layout_marginBottom="5dp"
             android:autoLink="none"
-            android:background="@drawable/bg_edittext"
+            android:background="@drawable/bg_edit_text"
             android:hint="@string/txtPass"
             android:inputType="textPassword"
             android:textAppearance="@style/TextEdit"
@@ -85,7 +86,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/txtPass"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/bg_textbutton"
+            android:background="@drawable/bg_text_button"
             android:onClick="Recovery"
             android:text="Recuperar contraseña" />
 
@@ -108,7 +109,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/btnLogin"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/bg_textbutton"
+            android:background="@drawable/bg_text_button"
             android:onClick="Register"
             android:text="@string/no_account" />
 

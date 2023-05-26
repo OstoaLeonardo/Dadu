@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/yellow_15"
     tools:context=".PreguntasAle">
 
     <LinearLayout
@@ -12,54 +13,76 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/lblTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Preguntas"
+            android:textAppearance="@style/Title" />
+        <TextView
             android:id="@+id/questionTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:padding="16dp"
             android:text="¿Cuál es la capital de Francia?"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:padding="16dp" />
+            android:textAppearance="@style/SubTitle"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
-        <RadioGroup
-            android:id="@+id/answersRadioGroup"
+        <TextView
+            android:id="@+id/timeTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:padding="8dp"
+            android:text=" 00:00"
+            android:textSize="24sp" />
 
-            <RadioButton
-                android:id="@+id/answer1RadioButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Londres" />
+        <TextView
+            android:id="@+id/answer1TextView"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_edit_text"
+            android:padding="8dp"
+            android:text="a) Londres"
+            android:textSize="24sp" />
 
-            <RadioButton
-                android:id="@+id/answer2RadioButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="París" />
+        <TextView
+            android:id="@+id/answer2TextView"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_edit_text"
+            android:padding="8dp"
+            android:text="b) París"
+            android:textSize="24sp" />
 
-            <RadioButton
-                android:id="@+id/answer3RadioButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Madrid" />
+        <TextView
+            android:id="@+id/answer3TextView"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_edit_text"
+            android:padding="8dp"
+            android:text="c) Madrid"
+            android:textSize="24sp" />
 
-            <RadioButton
-                android:id="@+id/answer4RadioButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Berlín" />
-
-        </RadioGroup>
-
-        <Button
-            android:id="@+id/submitButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Enviar"
-            android:layout_gravity="center"
-            android:padding="16dp" />
+        <TextView
+            android:id="@+id/answer4TextView"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_edit_text"
+            android:padding="8dp"
+            android:text="d) Berlín"
+            android:textSize="24sp" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
