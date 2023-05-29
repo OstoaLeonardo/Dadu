@@ -109,4 +109,8 @@ public class Register extends AppCompatActivity {
     public void back(View view){
         finish();
     }
+    public void atras(View view){
+        Intent intent = new Intent(Register.this, Login.class);
+        startActivity(intent);
+    }
 }
