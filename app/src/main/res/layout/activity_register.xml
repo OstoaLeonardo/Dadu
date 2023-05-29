@@ -80,8 +80,7 @@
             android:hint="@string/txtMail"
             android:inputType="textEmailAddress"
             android:textAppearance="@style/TextEdit"
-            android:textColor="@color/dark_charcoal"
-            android:importantForAutofill="no" />
+            android:textColor="@color/dark_charcoal" />
 
         <TextView
             android:id="@+id/lblPass"
@@ -145,8 +144,7 @@
             android:layout_below="@id/btnRegister"
             android:layout_centerHorizontal="true"
             android:background="@drawable/bg_text_button"
-            android:text="@string/txtCancel"
-            android:onClick="atras"/>
+            android:text="@string/txtCancel" />
 
     </RelativeLayout>
 
