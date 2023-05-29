@@ -21,10 +21,8 @@
         android:elevation="10dp"
         android:gravity="center"
         android:orientation="horizontal"
-        android:paddingStart="20dp"
-        android:paddingTop="15dp"
-        android:paddingEnd="20dp"
-        android:paddingBottom="15dp"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="15dp"
         android:weightSum="4">
 
         <LinearLayout
@@ -34,25 +32,15 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingStart="5dp"
-            android:paddingEnd="5dp">
+            android:orientation="horizontal">
 
-            <ImageView
+            <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/homeImage"
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                app:srcCompat="@drawable/home_selected" />
-
-            <TextView
-                android:id="@+id/homeText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="@string/home"
-                android:textColor="@color/blue"
-                android:visibility="gone" />
+                app:lottie_autoPlay="true"
+                app:lottie_rawRes="@raw/menu_outline_selected" />
 
         </LinearLayout>
 
@@ -63,25 +51,15 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingStart="5dp"
-            android:paddingEnd="5dp">
+            android:orientation="horizontal">
 
-            <ImageView
+            <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/storeImage"
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                app:srcCompat="@drawable/store" />
-
-            <TextView
-                android:id="@+id/storeText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="@string/store"
-                android:textColor="@color/blue"
-                android:visibility="gone" />
+                app:lottie_colorFilter="?attr/colorOutline"
+                app:lottie_rawRes="@raw/menu_outline_selected" />
 
         </LinearLayout>
 
@@ -92,25 +70,15 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingStart="5dp"
-            android:paddingEnd="5dp">
+            android:orientation="horizontal">
 
-            <ImageView
+            <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/achievementsImage"
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                app:srcCompat="@drawable/achievements" />
-
-            <TextView
-                android:id="@+id/achievementsText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="@string/achievements"
-                android:textColor="@color/blue"
-                android:visibility="gone" />
+                app:lottie_colorFilter="?attr/colorOutline"
+                app:lottie_rawRes="@raw/menu_outline" />
 
         </LinearLayout>
 
@@ -121,27 +89,18 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingStart="5dp"
-            android:paddingEnd="5dp">
+            android:orientation="horizontal">
 
-            <ImageView
+            <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/menuImage"
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                app:srcCompat="@drawable/menu" />
-
-            <TextView
-                android:id="@+id/menuText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="@string/menu"
-                android:textColor="@color/blue"
-                android:visibility="gone" />
+                app:lottie_colorFilter="?attr/colorOutline"
+                app:lottie_rawRes="@raw/menu_outline" />
 
         </LinearLayout>
+
     </LinearLayout>
 
 </RelativeLayout>
