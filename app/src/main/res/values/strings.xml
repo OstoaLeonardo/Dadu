@@ -8,6 +8,11 @@
     <string name="username">Martin</string>
     <string name="number">0</string>
     <string name="play">Jugar</string>
+    <!-- Navigation Drawer -->
+    <string name="account_settings">Mi cuenta</string>
+    <string name="settings">Configuracion</string>
+    <string name="navigation_drawer_open">Abrir navegación</string>
+    <string name="navigation_drawer_close">Cerrar navegación</string>
     <!-- Login -->
     <string name="txtWelcome">Hola de nuevo!</string>
     <string name="txtMail">Correo electronico:</string>

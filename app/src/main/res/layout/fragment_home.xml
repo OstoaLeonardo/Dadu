@@ -7,92 +7,55 @@
     android:background="@color/blue_15"
     tools:context=".HomeFragment">
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/topBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/clouds" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/centerBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/bees_flying" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="30dp">
+        android:paddingHorizontal="30dp"
+        android:paddingBottom="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
             android:background="@drawable/bg_card_user"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
             android:padding="20dp">
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/passion_one_bold"
-                    android:text="@string/hello"
-                    android:textColor="@color/white"
-                    android:textSize="34sp" />
-
-                <TextView
-                    android:id="@+id/tvUsername"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/passion_one_bold"
-                    android:text="@string/username"
-                    android:textColor="@color/white"
-                    android:textSize="34sp" />
-
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/btnSettings"
-                style="?attr/materialIconButtonFilledStyle"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:icon="@drawable/settings"
-                android:drawableTint="@color/white" />
-
-        </LinearLayout>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="15dp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="end">
+                android:fontFamily="@font/passion_one_bold"
+                android:text="@string/hello"
+                android:textColor="@color/white"
+                android:textSize="34sp" />
 
             <TextView
-                android:id="@+id/tvStars"
+                android:id="@+id/tvUsername"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_card_money"
-                android:drawablePadding="10dp"
                 android:fontFamily="@font/passion_one_bold"
-                android:text="@string/number"
-                android:textColor="?android:attr/colorBackground"
-                android:textSize="20sp"
-                app:drawableStartCompat="@drawable/star" />
-
-            <Space
-                android:layout_width="16dp"
-                android:layout_height="match_parent" />
-
-            <TextView
-                android:id="@+id/tvCoins"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_card_money"
-                android:drawablePadding="10dp"
-                android:fontFamily="@font/passion_one_bold"
-                android:text="@string/number"
-                android:textColor="?android:attr/colorBackground"
-                android:textSize="20sp"
-                app:drawableStartCompat="@drawable/coin" />
+                android:text="@string/username"
+                android:textColor="@color/white"
+                android:textSize="34sp" />
 
         </LinearLayout>
 
