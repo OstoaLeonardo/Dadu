@@ -5,12 +5,14 @@
     <string name="achievements">Logros</string>
     <string name="menu">Menu</string>
     <string name="hello">Hola</string>
-    <string name="username">Martin</string>
+    <string name="username">\@Username</string>
+    <string name="email">username@email.com</string>
     <string name="number">0</string>
     <string name="play">Jugar</string>
     <!-- Navigation Drawer -->
     <string name="account_settings">Mi cuenta</string>
-    <string name="settings">Configuracion</string>
+    <string name="settings">Configuración</string>
+    <string name="log_out">Cerrar sesión</string>
     <string name="navigation_drawer_open">Abrir navegación</string>
     <string name="navigation_drawer_close">Cerrar navegación</string>
     <!-- Login -->

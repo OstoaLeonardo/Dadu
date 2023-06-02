@@ -1,5 +1,7 @@
 package com.example.dadu;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
@@ -20,11 +22,5 @@ public class TopBarManager {
     public void setNavigationIcon(Drawable icon, View.OnClickListener listener) {
         topAppBar.setNavigationIcon(icon);
         topAppBar.setNavigationOnClickListener(listener);
-    }
-
-    public void setMenu(@MenuRes int menuRes, Toolbar.OnMenuItemClickListener listener) {
-        topAppBar.getMenu().clear();
-        topAppBar.inflateMenu(menuRes);
-        topAppBar.setOnMenuItemClickListener(listener);
     }
 }

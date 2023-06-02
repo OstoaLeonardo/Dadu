@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainer"
@@ -16,68 +16,98 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="?android:attr/colorBackground"
-        android:elevation="10dp"
+        android:baselineAligned="false"
         android:gravity="center"
         android:orientation="horizontal"
-        android:paddingHorizontal="20dp"
-        android:paddingVertical="15dp"
-        android:weightSum="3"
-        android:baselineAligned="false">
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:weightSum="3">
 
         <LinearLayout
             android:id="@+id/homeLayout"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/transparent"
+            android:background="@drawable/round_back_home"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingVertical="10dp">
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/homeImage"
-                android:layout_width="30dp"
+                android:layout_width="35dp"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 app:lottie_autoPlay="true"
                 app:lottie_rawRes="@raw/gamepad" />
+
+            <TextView
+                android:id="@+id/homeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/passion_one_bold"
+                android:text="@string/home"
+                android:textColor="@color/dark_charcoal"
+                android:textSize="20sp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/storeLayout"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/transparent"
             android:gravity="center"
             android:orientation="horizontal">
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/storeImage"
-                android:layout_width="40dp"
+                android:layout_width="35dp"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 app:lottie_autoPlay="true"
                 app:lottie_rawRes="@raw/coin" />
+
+            <TextView
+                android:id="@+id/storeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/passion_one_bold"
+                android:text="@string/store"
+                android:textColor="@color/dark_charcoal"
+                android:textSize="20sp"
+                android:visibility="gone" />
 
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/achievementsLayout"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/transparent"
             android:gravity="center"
             android:orientation="horizontal">
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/achievementsImage"
-                android:layout_width="40dp"
+                android:layout_width="35dp"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 app:lottie_autoPlay="true"
                 app:lottie_rawRes="@raw/trophy" />
+
+            <TextView
+                android:id="@+id/achievementsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/passion_one_bold"
+                android:text="@string/achievements"
+                android:textColor="@color/dark_charcoal"
+                android:textSize="20sp"
+                android:visibility="gone" />
 
         </LinearLayout>
 
