@@ -2,6 +2,8 @@ package com.example.dadu;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.ScaleAnimation;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -100,8 +102,7 @@ public class MainActivity extends AppCompatActivity {
                     replaceFragment(new HomeFragment());
                     getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this, R.color.blue_15));
                     topAppBar.setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.blue_15));
-                    homeLayout.setBackgroundResource(R.drawable.round_back_home);
-                    homeText.setVisibility(View.VISIBLE);
+                    animateIcon(homeLayout, R.drawable.round_back_home);
                     selectedTab = 1;
                 }
                 break;
@@ -110,8 +111,7 @@ public class MainActivity extends AppCompatActivity {
                     replaceFragment(new StoreFragment());
                     getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this, R.color.green_15));
                     topAppBar.setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.green_15));
-                    storeLayout.setBackgroundResource(R.drawable.round_back_store);
-                    storeText.setVisibility(View.VISIBLE);
+                    animateIcon(storeLayout, R.drawable.round_back_store);
                     selectedTab = 2;
                 }
                 break;
@@ -120,8 +120,7 @@ public class MainActivity extends AppCompatActivity {
                     replaceFragment(new AchievementsFragment());
                     getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this, R.color.yellow_15));
                     topAppBar.setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.yellow_15));
-                    achievementsLayout.setBackgroundResource(R.drawable.round_back_achievements);
-                    achievementsText.setVisibility(View.VISIBLE);
+                    animateIcon(achievementsLayout, R.drawable.round_back_achievements);
                     selectedTab = 3;
                 }
                 break;
@@ -168,5 +167,38 @@ public class MainActivity extends AppCompatActivity {
                 achievementsImage.playAnimation();
                 break;
         }
+    }
+
+    private void animateIcon(LinearLayout layout, int animationResource) {
+        ScaleAnimation scaleAnimation = new ScaleAnimation(0.8f, 1f, 1f, 1f, Animation.RELATIVE_TO_SELF, 1f, Animation.RELATIVE_TO_SELF, 0f);
+        scaleAnimation.setDuration(200);
+        scaleAnimation.setFillAfter(true);
+        layout.startAnimation(scaleAnimation);
+
+        layout.setBackgroundResource(animationResource);
+
+        LottieAnimationView animationView;
+        TextView textView;
+
+        switch (layout.getId()) {
+            case R.id.homeLayout:
+                animationView = homeImage;
+                textView = homeText;
+                break;
+            case R.id.storeLayout:
+                animationView = storeImage;
+                textView = storeText;
+                break;
+            case R.id.achievementsLayout:
+                animationView = achievementsImage;
+                textView = achievementsText;
+                break;
+            default:
+                return;
+        }
+
+        animationView.setAnimation(animationResource);
+        animationView.playAnimation();
+        textView.setVisibility(View.VISIBLE);
     }
 }
