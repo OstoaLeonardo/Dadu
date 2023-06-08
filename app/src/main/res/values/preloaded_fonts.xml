@@ -3,5 +3,7 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/passion_one</item>
         <item>@font/passion_one_bold</item>
+        <item>@font/rubik</item>
+        <item>@font/rubik_medium</item>
     </array>
 </resources>

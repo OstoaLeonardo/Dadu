@@ -22,10 +22,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/passion_one_bold"
             android:text="@string/email"
-            android:textColor="?attr/colorOutline"
-            android:textSize="20sp" />
+            android:textAppearance="@style/Body"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:textSize="18sp" />
 
     </LinearLayout>
 

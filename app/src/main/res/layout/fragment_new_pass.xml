@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/yellow_15"
+    android:background="?android:attr/colorBackground"
     tools:context=".NewPassFragment">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:padding="40dp">
 
         <TextView
@@ -24,61 +26,60 @@
             android:id="@+id/lblInstruction"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/lblWelcome"
             android:layout_marginBottom="40dp"
             android:text="@string/instruction_pass"
             android:justificationMode="inter_word"
             android:textAppearance="@style/Text" />
 
-        <TextView
-            android:id="@+id/lblPass"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tlPass"
+            style="@style/TextAppearance.App.TitleMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/lblInstruction"
             android:layout_marginBottom="20dp"
-            android:text="@string/txtPass"
-            android:textAppearance="@style/Body" />
-
-        <EditText
-            android:id="@+id/txtPass"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/lblPass"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/bg_edit_text"
             android:hint="@string/txtPass"
-            android:inputType="textPassword"
-            android:textAppearance="@style/TextEdit"
-            android:textColor="@color/dark_charcoal" />
+            app:endIconMode="password_toggle">
 
-        <TextView
-            android:id="@+id/lblCPass"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiPass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edit_text"
+                android:fontFamily="@font/rubik_medium"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:padding="25dp"
+                android:textSize="20sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tlCPass"
+            style="@style/TextAppearance.App.TitleMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/txtPass"
-            android:layout_marginBottom="20dp"
-            android:text="@string/txtCPass"
-            android:textAppearance="@style/Body" />
-
-        <EditText
-            android:id="@+id/txtCPass"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/lblCPass"
             android:layout_marginBottom="40dp"
-            android:background="@drawable/bg_edit_text"
             android:hint="@string/txtCPass"
-            android:inputType="textPassword"
-            android:textAppearance="@style/TextEdit"
-            android:textColor="@color/dark_charcoal" />
+            app:endIconMode="password_toggle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiCPass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edit_text"
+                android:fontFamily="@font/rubik_medium"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:padding="25dp"
+                android:textSize="20sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btnReset"
             style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/txtCPass"
-            android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp"
             android:background="@drawable/bg_button"
             android:text="@string/change_pass" />
@@ -88,11 +89,9 @@
             style="@style/TextButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/btnReset"
-            android:layout_centerHorizontal="true"
             android:background="@drawable/bg_text_button"
             android:text="@string/txtCancel" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </ScrollView>

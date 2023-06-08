@@ -19,6 +19,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,14 +27,15 @@ import java.util.Map;
 public class Login extends AppCompatActivity {
 
     SharedPreferences user;
-    EditText txtMail, txtPass;
+    TextInputEditText txtMail, txtPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        txtMail = findViewById(R.id.txtMail);
-        txtPass = findViewById(R.id.txtPass);
+
+        txtMail = findViewById(R.id.tlMail).findViewById(R.id.tiMail);
+        txtPass = findViewById(R.id.tlPass).findViewById(R.id.tiPass);
     }
 
     private void validarUsuario(String URL){

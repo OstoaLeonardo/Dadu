@@ -8,6 +8,7 @@
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="?android:attr/colorBackground"
         android:layout_above="@+id/bottomBar" />
 
     <LinearLayout
@@ -15,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="?android:attr/colorBackground"
+        android:background="?attr/colorSurface"
         android:baselineAligned="false"
         android:gravity="center"
         android:orientation="horizontal"

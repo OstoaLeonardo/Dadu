@@ -3,12 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/yellow_15"
+    android:background="?android:attr/colorBackground"
     tools:context=".ValidateCodeFragment">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:padding="40dp">
 
         <TextView
@@ -24,40 +25,36 @@
             android:id="@+id/lblInstruction"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/lblWelcome"
             android:layout_marginBottom="40dp"
             android:text="@string/instruction_code"
             android:justificationMode="inter_word"
             android:textAppearance="@style/Text" />
 
-        <TextView
-            android:id="@+id/lblMail"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tlCode"
+            style="@style/TextAppearance.App.TitleMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/lblInstruction"
             android:layout_marginBottom="20dp"
-            android:text="@string/code"
-            android:textAppearance="@style/Body" />
+            android:hint="@string/code">
 
-        <EditText
-            android:id="@+id/txtCode"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/lblMail"
-            android:layout_marginBottom="40dp"
-            android:background="@drawable/bg_edit_text"
-            android:hint="@string/code"
-            android:inputType="textEmailAddress"
-            android:textAppearance="@style/TextEdit"
-            android:textColor="@color/dark_charcoal" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edit_text"
+                android:fontFamily="@font/rubik_medium"
+                android:maxLines="1"
+                android:padding="25dp"
+                android:textSize="20sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btnRecovery"
             style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/txtCode"
-            android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp"
             android:background="@drawable/bg_button"
             android:text="@string/verify_code" />
@@ -67,11 +64,9 @@
             style="@style/TextButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/btnRecovery"
-            android:layout_centerHorizontal="true"
             android:background="@drawable/bg_text_button"
             android:text="@string/txtCancel" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </ScrollView>

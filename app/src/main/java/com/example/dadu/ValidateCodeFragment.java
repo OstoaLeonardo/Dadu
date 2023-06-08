@@ -21,6 +21,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -32,7 +33,7 @@ import java.util.Map;
  */
 public class ValidateCodeFragment extends Fragment {
 
-    EditText txtCode;
+    TextInputEditText txtCode;
     String user;
     Button btnRecovery, btnCancel;
     View mView;
@@ -85,7 +86,7 @@ public class ValidateCodeFragment extends Fragment {
 
         // Inflate the layout for this fragment
         mView = inflater.inflate(R.layout.fragment_validate_code, container, false);
-        txtCode = mView.findViewById(R.id.txtCode);
+        txtCode = mView.findViewById(R.id.tiCode);
         btnRecovery = mView.findViewById(R.id.btnRecovery);
         btnCancel = mView.findViewById(R.id.btnCancelar);
 

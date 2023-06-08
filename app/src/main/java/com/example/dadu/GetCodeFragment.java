@@ -21,6 +21,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -32,7 +33,7 @@ import java.util.Map;
  */
 public class GetCodeFragment extends Fragment {
 
-    EditText txtMail;
+    TextInputEditText txtMail;
     Button btnCode, btnRecovery, btnCancel;
     View mView;
 
@@ -81,7 +82,7 @@ public class GetCodeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         mView = inflater.inflate(R.layout.fragment_get_code, container, false);
-        txtMail = mView.findViewById(R.id.txtMail);
+        txtMail = mView.findViewById(R.id.tiMail);
         btnCode = mView.findViewById(R.id.btnCode);
         btnRecovery = mView.findViewById(R.id.btnRecovery);
         btnCancel = mView.findViewById(R.id.btnCancelar);

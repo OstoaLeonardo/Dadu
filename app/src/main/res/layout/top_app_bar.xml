@@ -6,15 +6,15 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="?android:attr/colorBackground">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/topAppBar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:menu="@menu/top_app_bar"
-            app:navigationIcon="@drawable/menu"
-            android:background="@color/blue_15">
+            app:navigationIcon="@drawable/menu">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -32,7 +32,7 @@
                     android:drawablePadding="10dp"
                     android:fontFamily="@font/passion_one_bold"
                     android:text="@string/number"
-                    android:textColor="?android:attr/colorBackground"
+                    android:textColor="@color/purple"
                     android:textSize="20sp"
                     app:drawableStartCompat="@drawable/star" />
 
@@ -44,7 +44,7 @@
                     android:drawablePadding="10dp"
                     android:fontFamily="@font/passion_one_bold"
                     android:text="@string/number"
-                    android:textColor="?android:attr/colorBackground"
+                    android:textColor="@color/yellow"
                     android:textSize="20sp"
                     app:drawableStartCompat="@drawable/coin" />
 

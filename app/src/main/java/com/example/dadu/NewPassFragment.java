@@ -19,6 +19,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,7 +31,7 @@ import java.util.Map;
  */
 public class NewPassFragment extends Fragment {
 
-    EditText txtPass, txtCPass;
+    TextInputEditText txtPass, txtCPass;
     String user;
     Button btnReset, btnCancel;
     View mView;
@@ -81,8 +82,8 @@ public class NewPassFragment extends Fragment {
         // Inflate the layout for this fragment
 
         mView = inflater.inflate(R.layout.fragment_new_pass, container, false);
-        txtPass = mView.findViewById(R.id.txtPass);
-        txtCPass = mView.findViewById(R.id.txtCPass);
+        txtPass = mView.findViewById(R.id.tiPass);
+        txtCPass = mView.findViewById(R.id.tiCPass);
 
         btnReset = mView.findViewById(R.id.btnReset);
         btnCancel = mView.findViewById(R.id.btnCancelar);

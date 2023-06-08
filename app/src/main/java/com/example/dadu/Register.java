@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -17,22 +16,25 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class Register extends AppCompatActivity {
 
-    EditText txtName, txtMail, txtPass, txtCPass, txtEdad;
+    TextInputEditText txtName, txtAge, txtMail, txtPass, txtCPass;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        txtMail = findViewById(R.id.txtMail);
-        txtPass = findViewById(R.id.txtPass);
-        txtCPass = findViewById(R.id.txtCPass);
-        txtName = findViewById(R.id.txtName);
-        txtEdad = findViewById(R.id.txtAge);
+
+        txtName = findViewById(R.id.tlName).findViewById(R.id.tiName);
+        txtAge = findViewById(R.id.tlAge).findViewById(R.id.tiAge);
+        txtMail = findViewById(R.id.tlMail).findViewById(R.id.tiMail);
+        txtPass = findViewById(R.id.tlPass).findViewById(R.id.tiPass);
+        txtCPass = findViewById(R.id.tlCPass).findViewById(R.id.tiCPass);
     }
 
     private void registrarUsuario(String URL){
@@ -60,7 +62,7 @@ public class Register extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("nombre", txtName.getText().toString());
-                params.put("edad", txtEdad.getText().toString());
+                params.put("edad", txtAge.getText().toString());
                 params.put("usuario", txtMail.getText().toString());
                 params.put("password", txtPass.getText().toString());
                 return params;
@@ -76,7 +78,7 @@ public class Register extends AppCompatActivity {
             mostrarError("No se ha ingresado el usuario");
             return;
         }
-        if(txtEdad.getText().toString().isEmpty()) {
+        if(txtAge.getText().toString().isEmpty()) {
             mostrarError("No se ha ingresado la edad");
             return;
         }
@@ -106,10 +108,7 @@ public class Register extends AppCompatActivity {
         snackbar.show();
     }
 
-    public void back(View view){
-        finish();
-    }
-    public void atras(View view){
+    public void backLogin(View view){
         Intent intent = new Intent(Register.this, Login.class);
         startActivity(intent);
     }

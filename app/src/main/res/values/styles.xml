@@ -57,9 +57,14 @@
 
     <!-- EditText -->
     <style name="EditText" parent="Widget.AppCompat.Button">
-        <item name="backgroundTint">@color/white</item>
         <item name="android:fontFamily">@font/passion_one_bold</item>
         <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="TextAppearance.App.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/rubik_medium</item>
+        <item name="fontFamily">@font/rubik_medium</item>
     </style>
 
     <!-- TextView -->
@@ -83,6 +88,7 @@
 
     <style name="Text" parent="Widget.AppCompat.Button">
         <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/rubik_medium</item>
         <item name="android:textColor">@color/dark_charcoal</item>
     </style>
 

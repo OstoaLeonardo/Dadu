@@ -22,8 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
     private LinearLayout homeLayout, storeLayout, achievementsLayout;
     private LottieAnimationView homeImage, storeImage, achievementsImage;
-
-    private MaterialToolbar topAppBar;
     private TextView homeText, storeText, achievementsText;
     private int selectedTab = 1;
 
@@ -35,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
         DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
         DrawerManager drawerManager = new DrawerManager();
         drawerManager.setupDrawer(this, drawerLayout);
-
-        topAppBar = findViewById(R.id.topAppBar);
 
         TopBarManager topBar = new TopBarManager();
         topBar.setupTopBar(this);
@@ -68,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
         achievementsText = findViewById(R.id.achievementsText);
 
         replaceFragment(new HomeFragment());
-        getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.blue_15));
 
         homeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,8 +95,6 @@ public class MainActivity extends AppCompatActivity {
             case 1:
                 if (selectedTab != 1) {
                     replaceFragment(new HomeFragment());
-                    getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this, R.color.blue_15));
-                    topAppBar.setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.blue_15));
                     animateIcon(homeLayout, R.drawable.round_back_home);
                     selectedTab = 1;
                 }
@@ -109,8 +102,6 @@ public class MainActivity extends AppCompatActivity {
             case 2:
                 if (selectedTab != 2) {
                     replaceFragment(new StoreFragment());
-                    getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this, R.color.green_15));
-                    topAppBar.setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.green_15));
                     animateIcon(storeLayout, R.drawable.round_back_store);
                     selectedTab = 2;
                 }
@@ -118,8 +109,6 @@ public class MainActivity extends AppCompatActivity {
             case 3:
                 if (selectedTab != 3) {
                     replaceFragment(new AchievementsFragment());
-                    getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this, R.color.yellow_15));
-                    topAppBar.setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.yellow_15));
                     animateIcon(achievementsLayout, R.drawable.round_back_achievements);
                     selectedTab = 3;
                 }
