@@ -81,6 +81,11 @@
         <item name="android:textColor">@color/dark_charcoal</item>
     </style>
 
+    <style name="Text" parent="Widget.AppCompat.Button">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/dark_charcoal</item>
+    </style>
+
     <style name="TextEdit" parent="Widget.AppCompat.Button">
         <item name="android:textSize">20sp</item>
         <item name="android:fontFamily">@font/passion_one_bold</item>

@@ -28,7 +28,7 @@
             android:layout_marginBottom="40dp"
             android:text="@string/instruction_code"
             android:justificationMode="inter_word"
-            android:textAppearance="@style/Body" />
+            android:textAppearance="@style/Text" />
 
         <TextView
             android:id="@+id/lblMail"

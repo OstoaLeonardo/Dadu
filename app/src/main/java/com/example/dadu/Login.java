@@ -1,6 +1,8 @@
 package com.example.dadu;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -23,7 +25,9 @@ import java.util.Map;
 
 public class Login extends AppCompatActivity {
 
+    SharedPreferences user;
     EditText txtMail, txtPass;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +68,7 @@ public class Login extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
+    @SuppressLint("NotConstructor")
     public void Login(View view){
         if(txtMail.getText().toString().isEmpty()) {
             mostrarError("No se ha ingresado el correo");
