@@ -1,5 +1,6 @@
 package com.example.dadu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -190,4 +191,5 @@ public class MainActivity extends AppCompatActivity {
         animationView.playAnimation();
         textView.setVisibility(View.VISIBLE);
     }
+
 }

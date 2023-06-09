@@ -30,9 +30,9 @@ public class Splash extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                     // Establecer la bandera "firstRun" a false
-                    SharedPreferences.Editor editor = settings.edit();
-                    editor.putBoolean(KEY_FIRST_RUN, false);
-                    editor.apply();
+                   // SharedPreferences.Editor editor = settings.edit();
+                    //editor.putBoolean(KEY_FIRST_RUN, false);
+                    //editor.apply();
                 } else {
                     // La actividad ya se ha mostrado antes
                     // Realizar las acciones que deseas realizar en las siguientes ejecuciones aquí

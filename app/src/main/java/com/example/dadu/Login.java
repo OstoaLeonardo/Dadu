@@ -25,6 +25,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Login extends AppCompatActivity {
+    private static final String PREFS_NAME = "MyPrefsFile";
+    private static final String KEY_FIRST_RUN = "firstRun";
 
     SharedPreferences user;
     TextInputEditText txtMail, txtPass;
@@ -33,6 +35,10 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        boolean firstRun = settings.getBoolean(KEY_FIRST_RUN, true);
+
 
         txtMail = findViewById(R.id.tlMail).findViewById(R.id.tiMail);
         txtPass = findViewById(R.id.tlPass).findViewById(R.id.tiPass);
@@ -46,6 +52,10 @@ public class Login extends AppCompatActivity {
                     Intent intent = new Intent(Login.this, MainActivity.class);
                     startActivity(intent);
                     finish();
+                    SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+                    SharedPreferences.Editor editor = settings.edit();
+                    editor.putBoolean(KEY_FIRST_RUN, false);
+                    editor.apply();
                 }
                 else
                     Toast.makeText(Login.this, "Usuario invalido", Toast.LENGTH_SHORT).show();
