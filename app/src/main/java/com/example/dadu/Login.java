@@ -39,7 +39,6 @@ public class Login extends AppCompatActivity {
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         boolean firstRun = settings.getBoolean(KEY_FIRST_RUN, true);
 
-
         txtMail = findViewById(R.id.tlMail).findViewById(R.id.tiMail);
         txtPass = findViewById(R.id.tlPass).findViewById(R.id.tiPass);
     }

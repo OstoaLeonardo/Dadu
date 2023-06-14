@@ -13,8 +13,8 @@
 
     <!-- Navigation Drawer -->
     <style name="DrawerMenuItem">
-        <item name="android:textSize">20sp</item>
-        <item name="android:fontFamily">@font/passion_one</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/rubik_medium</item>
     </style>
 
     <!-- Button -->

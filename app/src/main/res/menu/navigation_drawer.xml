@@ -17,6 +17,7 @@
     <item
         android:id="@+id/logout"
         android:icon="@drawable/log_out"
+        android:onClick="doThis"
         android:title="@string/log_out">
     </item>
 

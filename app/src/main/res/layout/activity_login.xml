@@ -42,6 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_edit_text"
+                android:ellipsize="end"
                 android:fontFamily="@font/rubik_medium"
                 android:maxLines="1"
                 android:padding="25dp"
