@@ -87,5 +87,7 @@
     <color name="pink_15">#26FF66C2</color>
     <color name="purple_15">#26BE6AFF</color>
 
+    <color name="gray_200">#F9F9F9</color>
+    <color name="gray_500">#F0F0F0</color>
     <color name="yellow_25">#40FFD646</color>
 </resources>
