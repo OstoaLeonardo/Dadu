@@ -19,7 +19,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.airbnb.lottie.LottieAnimationView;
-import com.google.android.material.appbar.MaterialToolbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -204,5 +203,10 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = settings.edit();
         editor.putBoolean(KEY_FIRST_RUN, true);
         editor.apply();
+    }
+
+    public void goTools(MenuItem item) {
+        Intent intent = new Intent(MainActivity.this, Tools.class);
+        startActivity(intent);
     }
 }

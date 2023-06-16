@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConverterFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="40dp"
+        android:paddingVertical="20dp"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:text="Temperatura"
+            android:textAppearance="@style/Title"
+            tools:ignore="HardcodedText" />
+
+        <androidx.cardview.widget.CardView
+            style="@style/Widget.Material3.CardView.Filled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="32dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="50dp"
+                android:orientation="vertical">
+
+                <Spinner
+                    android:id="@+id/spMedida1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/rubik_medium" />
+
+                <EditText
+                    android:id="@+id/etValor1"
+                    style="@style/Widget.AppCompat.EditText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:ems="10"
+                    android:fontFamily="@font/rubik_medium"
+                    android:hint="0"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="textEnd"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    tools:ignore="Autofill,HardcodedText" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            style="@style/Widget.Material3.CardView.Filled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="?attr/colorSecondaryContainer"
+            app:cardCornerRadius="32dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="50dp"
+                android:orientation="vertical">
+
+                <Spinner
+                    android:id="@+id/spMedida2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etValor2"
+                    style="@style/Widget.AppCompat.EditText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:fontFamily="@font/rubik_medium"
+                    android:hint="0"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="textEnd"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    tools:ignore="Autofill,HardcodedText" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</FrameLayout>
