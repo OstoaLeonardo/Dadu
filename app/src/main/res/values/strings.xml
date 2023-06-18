@@ -38,6 +38,9 @@
     <string name="verify_code">Verificar codigo</string>
     <string name="change_pass">Cambiar contraseña</string>
     <string name="instruction_pass">Ingresa una nueva contraseña para tu cuenta.</string>
+    <!-- My Account -->
+    <string name="update_account">Actualizar perfil</string>
+    <string name="edit_account">Editar perfil</string>
     <!-- Games -->
     <string name="choose_game">Elige un modo de juego</string>
     <string name="random">Aleatorio</string>
@@ -54,8 +57,6 @@
     <string name="answer2">Respuesta 2</string>
     <string name="answer3">Respuesta 3</string>
     <string name="answer4">Respuesta 4</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="back"><![CDATA[< Volver]]></string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
