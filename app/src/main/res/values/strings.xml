@@ -41,6 +41,7 @@
     <!-- My Account -->
     <string name="update_account">Actualizar perfil</string>
     <string name="edit_account">Editar perfil</string>
+    <string name="change_avatar">Cambiar foto de perfil</string>
     <!-- Games -->
     <string name="choose_game">Elige un modo de juego</string>
     <string name="random">Aleatorio</string>
