@@ -52,9 +52,6 @@ public class ToDoFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_to_do, container, false);
-        data.add("Elemento 1");
-        data.add("Elemento 2");
-        data.add("Elemento 3");
 
         recyclerView = view.findViewById(R.id.recyclerView);
         adapter = new RecyclerViewAdapter(requireContext(), data);

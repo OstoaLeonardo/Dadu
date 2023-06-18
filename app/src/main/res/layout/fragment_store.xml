@@ -6,4 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".StoreFragment">
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/centerBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/monoplane" />
+
 </FrameLayout>
