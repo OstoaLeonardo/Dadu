@@ -90,4 +90,7 @@
     <color name="gray_200">#F9F9F9</color>
     <color name="gray_500">#F0F0F0</color>
     <color name="yellow_25">#40FFD646</color>
+
+    <color name="colorLockedBackground">#CCCCCC</color>
+    <color name="colorLockedText">#888888</color>
 </resources>

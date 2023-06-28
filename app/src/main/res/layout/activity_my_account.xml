@@ -74,6 +74,7 @@
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:src="@drawable/avatar"
+                        android:onClick="selectImage"
                         app:civ_border_color="?attr/colorOutline"
                         app:civ_border_width="1dp" />
 
@@ -103,6 +104,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="40dp"
                 android:layout_marginBottom="20dp"
+
                 android:hint="@string/txtName">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -112,6 +114,7 @@
                     android:background="@drawable/bg_edit_text"
                     android:fontFamily="@font/rubik_medium"
                     android:maxLines="1"
+
                     android:padding="25dp"
                     android:textSize="20sp" />
 
@@ -124,6 +127,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="40dp"
                 android:layout_marginBottom="20dp"
+
                 android:hint="@string/txtMail">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -146,6 +150,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="40dp"
                 android:layout_marginBottom="20dp"
+
                 android:hint="@string/txtAge">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -176,6 +181,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="40dp"
                 android:layout_marginBottom="20dp"
+
                 android:hint="@string/txtPass"
                 app:endIconMode="password_toggle">
 
@@ -199,6 +205,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="40dp"
                 android:layout_marginBottom="40dp"
+
                 android:hint="@string/txtCPass"
                 app:endIconMode="password_toggle">
 
@@ -214,7 +221,15 @@
                     android:textSize="20sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
-
+            <Button
+                android:id="@+id/btnRegisterB"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_button"
+                android:text="Editar" />
             <Button
                 android:id="@+id/btnRegister"
                 style="@style/ButtonStyle"
@@ -223,6 +238,8 @@
                 android:layout_marginHorizontal="40dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/bg_button"
+                android:onClick="UpdateUser"
+                android:visibility="gone"
                 android:text="@string/update_account" />
 
             <Button
@@ -232,6 +249,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="40dp"
                 android:layout_marginBottom="40dp"
+
                 android:background="@drawable/bg_text_button"
                 android:text="@string/txtCancel" />
 

@@ -1,5 +1,6 @@
 package com.example.dadu;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -37,6 +39,14 @@ public class MainActivity extends AppCompatActivity {
         DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
         DrawerManager drawerManager = new DrawerManager();
         drawerManager.setupDrawer(this, drawerLayout);
+
+
+
+
+        //SharedPreferences sharedPreferences = getSharedPreferences("MiSharedPreferences", Context.MODE_PRIVATE);
+        //String textoGuardado = sharedPreferences.getString("texto_guardado", "");
+        //email.setText(textoGuardado);
+
 
         TopBarManager topBar = new TopBarManager();
         topBar.setupTopBar(this);

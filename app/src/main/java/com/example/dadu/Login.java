@@ -1,6 +1,7 @@
 package com.example.dadu;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -45,12 +46,20 @@ public class Login extends AppCompatActivity {
 
     private void validarUsuario(String URL){
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+
             @Override
             public void onResponse(String response) {
                 if(!response.isEmpty()){
                     Intent intent = new Intent(Login.this, MainActivity.class);
                     startActivity(intent);
                     finish();
+
+                    SharedPreferences sharedPreferences = getSharedPreferences("MiSharedPreferences", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor1 = sharedPreferences.edit();
+                    String texto = txtMail.getText().toString();
+                    editor1.putString("texto_guardado", texto);
+                    editor1.apply();
+
                     SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
                     SharedPreferences.Editor editor = settings.edit();
                     editor.putBoolean(KEY_FIRST_RUN, false);

@@ -98,5 +98,8 @@
         <item name="android:textColor">@color/dark_charcoal</item>
         <item name="android:ems">10</item>
     </style>
-
+    <style name="LockedTextInputEditTextStyle" parent="Widget.MaterialComponents.TextInputEditText.FilledBox">
+        <item name="android:background">@color/colorLockedBackground</item>
+        <item name="android:textColor">@color/colorLockedText</item>
+    </style>
 </resources>
