@@ -61,11 +61,13 @@
                 app:strokeWidth="5dp">
 
                 <LinearLayout
+                    android:id="@+id/LayuImagen"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="15dp"
                     android:layout_marginVertical="15dp"
                     android:gravity="center"
+                    android:onClick="selectImage"
                     android:orientation="horizontal"
                     tools:ignore="UselessParent">
 
@@ -74,7 +76,6 @@
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:src="@drawable/avatar"
-                        android:onClick="selectImage"
                         app:civ_border_color="?attr/colorOutline"
                         app:civ_border_width="1dp" />
 

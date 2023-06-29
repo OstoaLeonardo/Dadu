@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     private LinearLayout homeLayout, storeLayout, achievementsLayout;
     private LottieAnimationView homeImage, storeImage, achievementsImage;
-    private TextView homeText, storeText, achievementsText;
+    private TextView homeText, storeText, achievementsText , name;
     private int selectedTab = 1;
     private static final String PREFS_NAME = "MyPrefsFile";
     private static final String KEY_FIRST_RUN = "firstRun";
@@ -40,13 +40,10 @@ public class MainActivity extends AppCompatActivity {
         DrawerManager drawerManager = new DrawerManager();
         drawerManager.setupDrawer(this, drawerLayout);
 
-
-
-
-        //SharedPreferences sharedPreferences = getSharedPreferences("MiSharedPreferences", Context.MODE_PRIVATE);
-        //String textoGuardado = sharedPreferences.getString("texto_guardado", "");
-        //email.setText(textoGuardado);
-
+        SharedPreferences sharedPreferences = getSharedPreferences("MiSharedPreferences", Context.MODE_PRIVATE);
+        String textoGuardado = sharedPreferences.getString("texto_guardado", "");
+        name=findViewById(R.id.HeaEmail);
+        name.setText(textoGuardado);
 
         TopBarManager topBar = new TopBarManager();
         topBar.setupTopBar(this);
@@ -128,7 +125,6 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
         }
-
         changeIcons();
     }
 
