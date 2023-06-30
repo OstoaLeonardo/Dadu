@@ -24,9 +24,15 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.bumptech.glide.request.RequestOptions;
+
+import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
-
+    private static final int REQUEST_IMAGE = 1;
+    private static final String PREF_IMAGE_PATH = "image_path";
     private LinearLayout homeLayout, storeLayout, achievementsLayout;
     private LottieAnimationView homeImage, storeImage, achievementsImage;
     private TextView homeText, storeText, achievementsText , name;
@@ -34,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private int selectedTab = 1;
     private static final String PREFS_NAME = "MyPrefsFile";
     private static final String KEY_FIRST_RUN = "firstRun";
+    private int defaultImageRes = R.drawable.avatar; // ID del recurso de imagen por defecto
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
         DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
         DrawerManager drawerManager = new DrawerManager();
         drawerManager.setupDrawer(this, drawerLayout);
-
 
 
         TopBarManager topBar = new TopBarManager();
@@ -228,12 +234,21 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, MyAccount.class);
         startActivity(intent);
     }
+
     private void mostrarImagenGuardada() {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        String imageUriString = preferences.getString("image", "");
-        if (!imageUriString.isEmpty()) {
-            Uri imageUri = Uri.parse(imageUriString);
-            profileImage.setImageURI(imageUri);
+        String imagePath = preferences.getString(PREF_IMAGE_PATH, "");
+
+        if (!imagePath.isEmpty()) {
+            File imageFile = new File(imagePath);
+            if (imageFile.exists()) {
+                Uri imageUri = Uri.fromFile(imageFile);
+                profileImage.setImageURI(imageUri);
+            } else {
+                profileImage.setImageResource(defaultImageRes);
+            }
+        } else {
+            profileImage.setImageResource(defaultImageRes);
         }
     }
 }

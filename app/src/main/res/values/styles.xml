@@ -99,7 +99,8 @@
         <item name="android:ems">10</item>
     </style>
     <style name="LockedTextInputEditTextStyle" parent="Widget.MaterialComponents.TextInputEditText.FilledBox">
-        <item name="android:background">@color/colorLockedBackground</item>
-        <item name="android:textColor">@color/colorLockedText</item>
+        <item name="android:background">@color/colorLockedText</item>
+        <item name="android:text">@color/colorLockedText</item>
+        <item name="android:textColor"></item>
     </style>
 </resources>

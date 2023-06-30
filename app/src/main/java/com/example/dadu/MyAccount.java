@@ -24,6 +24,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.RequestOptions;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -57,13 +58,16 @@ import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
 
 public class MyAccount extends AppCompatActivity {
-    private static final int REQUEST_IMAGE = 1;
+    private static final int REQUEST_IMAGE = 100;
     private String imageName;
     LinearLayout Imagen;
     TextInputEditText txtName, txtAge, txtMail, txtPass, txtCPass;
     ImageView profileImage;
     int resourceId = R.drawable.avatar;
     private Bitmap imagenSeleccionada;
+    private static final String PREF_IMAGE_PATH = "image_path";
+
+    private String imagePath;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,7 +99,7 @@ public class MyAccount extends AppCompatActivity {
         txtCPass.setEnabled(false);
         txtCPass.setTextAppearance(R.style.LockedTextInputEditTextStyle);
 
-
+        mostrarImagenGuardada();
 
         SharedPreferences sharedPreferences = getSharedPreferences("MiSharedPreferences", Context.MODE_PRIVATE);
         String textoGuardado = sharedPreferences.getString("texto_guardado", "");
@@ -203,45 +207,51 @@ public class MyAccount extends AppCompatActivity {
     }
 
 
-    private Uri obtenerUriFoto() {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.setType("image/*");
-        startActivityForResult(intent, REQUEST_IMAGE);
-        return null;
-    }
-
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == REQUEST_IMAGE && resultCode == RESULT_OK && data != null) {
             Uri imageUri = data.getData();
-            guardarFoto(imageUri);
-            mostrarImagenGuardada();
-        }
-    }
+            if (imageUri != null) {
+                try {
+                    // Guardar la imagen en la memoria interna
+                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
+                    String filename = "profile_image.jpg";
+                    File file = new File(getFilesDir(), filename);
+                    FileOutputStream fos = new FileOutputStream(file);
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+                    fos.close();
 
-    private void guardarFoto(Uri imageUri) {
-        if (imageUri != null) {
-            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-            SharedPreferences.Editor editor = preferences.edit();
-            editor.putString("image", imageUri.toString());  // Guardar la URI como una cadena
-            editor.commit();
+                    // Guardar la ruta de la imagen en las SharedPreferences
+                    imagePath = file.getAbsolutePath();
+                    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString(PREF_IMAGE_PATH, imagePath);
+                    editor.apply();
 
-            Toast.makeText(this, "Foto guardada con éxito", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "No se pudo obtener la URI de la foto", Toast.LENGTH_SHORT).show();
+                    // Mostrar la imagen en el ImageView
+                    profileImage.setImageURI(imageUri);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, "Error al guardar la imagen", Toast.LENGTH_SHORT).show();
+                }
+            }
         }
     }
 
     private void mostrarImagenGuardada() {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        String imageUriString = preferences.getString("image", "");
-        if (!imageUriString.isEmpty()) {
-            Uri imageUri = Uri.parse(imageUriString);
-            profileImage.setImageURI(imageUri);
+        imagePath = preferences.getString(PREF_IMAGE_PATH, "");
+        if (!imagePath.isEmpty()) {
+            File imageFile = new File(imagePath);
+            if (imageFile.exists()) {
+                Uri imageUri = Uri.fromFile(imageFile);
+                profileImage.setImageURI(imageUri);
+            }
         }
     }
+
 
 }
 
