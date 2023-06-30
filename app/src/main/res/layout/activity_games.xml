@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_15"
     tools:context=".Games">
 
     <LinearLayout
@@ -17,7 +16,7 @@
 
         <Button
             android:id="@+id/btnBack"
-            style="?attr/materialIconButtonFilledTonalStyle"
+            style="?attr/materialIconButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:icon="@drawable/arrow_small_left" />
@@ -29,7 +28,7 @@
             android:layout_marginBottom="20dp"
             android:text="@string/choose_game"
             android:textAlignment="textEnd"
-            android:textAppearance="@style/Body" />
+            android:textAppearance="@style/Text" />
 
     </LinearLayout>
 
