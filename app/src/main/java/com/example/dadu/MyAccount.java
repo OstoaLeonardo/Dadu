@@ -10,6 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
@@ -20,6 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.RequestOptions;
 
 import androidx.annotation.Nullable;
@@ -95,25 +97,8 @@ public class MyAccount extends AppCompatActivity {
 
 
 
-        SharedPreferences sharedPreferences1 = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-        String imageUriString = sharedPreferences1.getString("imageUri", "");
-
-
-        // Mostrar la imagen en el ImageView si existe una ruta válida
-       /* if (!imageUriString.isEmpty()) {
-            Uri imageUri = Uri.parse(imageUriString);
-            profileImage.setImageURI(imageUri);
-        } else {
-            int resourceId = R.drawable.avatar; // Reemplaza "default_image" con el identificador de tu imagen predeterminada
-            Drawable drawable = getDrawable(resourceId);
-            profileImage.setImageDrawable(drawable);
-        }*/
-
-
-
         SharedPreferences sharedPreferences = getSharedPreferences("MiSharedPreferences", Context.MODE_PRIVATE);
         String textoGuardado = sharedPreferences.getString("texto_guardado", "");
-
         txtMail.setText(textoGuardado);
 
         TopBarManager topBar = new TopBarManager();
@@ -217,33 +202,47 @@ public class MyAccount extends AppCompatActivity {
         snackbar.show();
     }
 
-    public void selectImage(View view) {
+
+    private Uri obtenerUriFoto() {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("image/*");
         startActivityForResult(intent, REQUEST_IMAGE);
+        return null;
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == REQUEST_IMAGE && resultCode == RESULT_OK && data != null) {
-            Uri selectedImageUri = data.getData();
-
-            try {
-                Bitmap imagenSeleccionada = MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedImageUri);
-                profileImage.setImageBitmap(imagenSeleccionada);
-
-                // Guardar la ruta de la imagen en SharedPreferences
-                SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("imageUri", selectedImageUri.toString());
-                editor.commit();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            Uri imageUri = data.getData();
+            guardarFoto(imageUri);
+            mostrarImagenGuardada();
         }
     }
+
+    private void guardarFoto(Uri imageUri) {
+        if (imageUri != null) {
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("image", imageUri.toString());  // Guardar la URI como una cadena
+            editor.commit();
+
+            Toast.makeText(this, "Foto guardada con éxito", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "No se pudo obtener la URI de la foto", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void mostrarImagenGuardada() {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String imageUriString = preferences.getString("image", "");
+        if (!imageUriString.isEmpty()) {
+            Uri imageUri = Uri.parse(imageUriString);
+            profileImage.setImageURI(imageUri);
+        }
+    }
+
 }
 
 

@@ -40,10 +40,10 @@ public class MainActivity extends AppCompatActivity {
         DrawerManager drawerManager = new DrawerManager();
         drawerManager.setupDrawer(this, drawerLayout);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("MiSharedPreferences", Context.MODE_PRIVATE);
-        String textoGuardado = sharedPreferences.getString("texto_guardado", "");
-        name=findViewById(R.id.HeaEmail);
-        name.setText(textoGuardado);
+       // SharedPreferences sharedPreferences = getSharedPreferences("MiSharedPreferences", Context.MODE_PRIVATE);
+        //String textoGuardado = sharedPreferences.getString("texto_guardado", "");
+        //name=findViewById(R.id.HeaEmail);
+        //name.setText(textoGuardado);
 
         TopBarManager topBar = new TopBarManager();
         topBar.setupTopBar(this);
