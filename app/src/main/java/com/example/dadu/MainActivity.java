@@ -30,13 +30,15 @@ import com.bumptech.glide.request.RequestOptions;
 
 import java.io.File;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_IMAGE = 1;
     private static final String PREF_IMAGE_PATH = "image_path";
     private LinearLayout homeLayout, storeLayout, achievementsLayout;
     private LottieAnimationView homeImage, storeImage, achievementsImage;
     private TextView homeText, storeText, achievementsText , name;
-    private ImageView profileImage;
+    private CircleImageView profileImage;
     private int selectedTab = 1;
     private static final String PREFS_NAME = "MyPrefsFile";
     private static final String KEY_FIRST_RUN = "firstRun";
@@ -52,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
         DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
         DrawerManager drawerManager = new DrawerManager();
         drawerManager.setupDrawer(this, drawerLayout);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String imagePath = preferences.getString(PREF_IMAGE_PATH, "");
 
 
         TopBarManager topBar = new TopBarManager();

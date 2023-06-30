@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
@@ -18,6 +19,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -40,11 +42,19 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -104,6 +114,10 @@ public class MyAccount extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("MiSharedPreferences", Context.MODE_PRIVATE);
         String textoGuardado = sharedPreferences.getString("texto_guardado", "");
         txtMail.setText(textoGuardado);
+
+        String correoElectronico = textoGuardado;
+        ObtenerDatosClienteTask task = new ObtenerDatosClienteTask();
+        task.execute(correoElectronico);
 
         TopBarManager topBar = new TopBarManager();
         topBar.setupTopBar(this);
@@ -251,8 +265,70 @@ public class MyAccount extends AppCompatActivity {
             }
         }
     }
+    private void obtenerDatosDelServidor() {
+        // Código para realizar la solicitud al servidor PHP y recibir la respuesta
+
+        // ...
+        // Una vez que tienes la respuesta del servidor PHP en la variable responseString
+        // puedes asignarla al TextView
+       // textViewDatos.setText(responseString);
+    }
+    public class ObtenerDatosClienteTask extends AsyncTask<String, Void, String> {
+
+        @Override
+        protected String doInBackground(String... params) {
+            String correo = params[0];
+            String serverUrl = "https://daduappmovil.000webhostapp.com/recu.php" + correo;
+
+            try {
+                URL url = new URL(serverUrl);
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("GET");
+
+                int responseCode = connection.getResponseCode();
+                if (responseCode == HttpURLConnection.HTTP_OK) {
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                    StringBuilder response = new StringBuilder();
+                    String line;
+
+                    while ((line = reader.readLine()) != null) {
+                        response.append(line);
+                    }
+
+                    reader.close();
+                    return response.toString();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+
+        protected void onPostExecute(String result) {
+            if (result != null) {
+                try {
+                    JSONArray jsonArray = new JSONArray(result);
+                    if (jsonArray.length() > 0) {
+                        JSONObject cliente = jsonArray.getJSONObject(0);
+
+                        // Obtener los datos específicos del cliente
+                        String nombre = cliente.getString("nombre");
+                        String edad = cliente.getString("edad");
 
 
+                        // Establecer el texto en el TextView
+                        txtName.setText(nombre);
+                        txtAge.setText(edad);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                // Manejar el caso en el que no se pudieron obtener los datos del cliente
+            }
+        }
+    }
 }
 
 

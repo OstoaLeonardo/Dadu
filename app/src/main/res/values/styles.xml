@@ -101,6 +101,6 @@
     <style name="LockedTextInputEditTextStyle" parent="Widget.MaterialComponents.TextInputEditText.FilledBox">
         <item name="android:background">@color/colorLockedText</item>
         <item name="android:text">@color/colorLockedText</item>
-        <item name="android:textColor"></item>
+        <item name="android:fontFamily">@font/rubik_medium</item>
     </style>
 </resources>
