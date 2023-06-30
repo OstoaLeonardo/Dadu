@@ -35,7 +35,7 @@
                 android:id="@+id/Name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/username"
+                android:text="Bienvenido"
                 android:textAppearance="@style/Body"
                 android:textColor="?attr/colorOnSurface" />
 

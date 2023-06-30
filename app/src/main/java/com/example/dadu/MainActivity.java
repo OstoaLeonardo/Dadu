@@ -3,12 +3,15 @@ package com.example.dadu;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout homeLayout, storeLayout, achievementsLayout;
     private LottieAnimationView homeImage, storeImage, achievementsImage;
     private TextView homeText, storeText, achievementsText , name;
+    private ImageView profileImage;
     private int selectedTab = 1;
     private static final String PREFS_NAME = "MyPrefsFile";
     private static final String KEY_FIRST_RUN = "firstRun";
@@ -36,14 +40,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        profileImage= findViewById(R.id.profileImage);
+
         DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
         DrawerManager drawerManager = new DrawerManager();
         drawerManager.setupDrawer(this, drawerLayout);
 
-       // SharedPreferences sharedPreferences = getSharedPreferences("MiSharedPreferences", Context.MODE_PRIVATE);
-        //String textoGuardado = sharedPreferences.getString("texto_guardado", "");
-        //name=findViewById(R.id.HeaEmail);
-        //name.setText(textoGuardado);
+
 
         TopBarManager topBar = new TopBarManager();
         topBar.setupTopBar(this);
@@ -52,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+
+                        SharedPreferences sharedPreferences = getSharedPreferences("MiSharedPreferences", Context.MODE_PRIVATE);
+                        String textoGuardado = sharedPreferences.getString("texto_guardado", "");
+                        name=findViewById(R.id.HeaEmail);
+                        name.setText(textoGuardado);
                         DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
                         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
                             drawerLayout.closeDrawer(GravityCompat.START);
@@ -219,5 +227,13 @@ public class MainActivity extends AppCompatActivity {
     public void goMyAccount(MenuItem item) {
         Intent intent = new Intent(MainActivity.this, MyAccount.class);
         startActivity(intent);
+    }
+    private void mostrarImagenGuardada() {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String imageUriString = preferences.getString("image", "");
+        if (!imageUriString.isEmpty()) {
+            Uri imageUri = Uri.parse(imageUriString);
+            profileImage.setImageURI(imageUri);
+        }
     }
 }
