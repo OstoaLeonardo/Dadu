@@ -1,6 +1,5 @@
 package com.example.dadu;
 
-import android.animation.ObjectAnimator;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -14,6 +13,7 @@ import androidx.core.content.ContextCompat;
 import com.bumptech.glide.Glide;
 import com.example.dadu.db.DBHelper;
 import com.example.dadu.db.DBManager;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -45,6 +45,7 @@ public class Question extends AppCompatActivity {
         btnAnswer3 = findViewById(R.id.btnAnswer3);
         btnAnswer4 = findViewById(R.id.btnAnswer4);
 
+        MaterialToolbar topAppBar = findViewById(R.id.topAppBar);
         TopBarManager topBar = new TopBarManager();
         topBar.setupTopBar(this);
         topBar.setNavigationIcon(
@@ -52,8 +53,17 @@ public class Question extends AppCompatActivity {
                 view -> onBackPressed()
         );
 
+        // Title and color of the top bar
         String subject = getIntent().getStringExtra("subject");
         setTitle(getSubjectTitle(subject));
+
+        int colorSubject = getSubjectColor(subject);
+        int titleColor = ContextCompat.getColor(this, colorSubject);
+        topAppBar.setTitleTextColor(titleColor);
+
+        // Color of the progress bar
+        int colorProgressBar = getSubjectColor(subject);
+        progressBar.setIndicatorColor(titleColor);
 
         DBHelper dbHelper = new DBHelper(this);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -213,4 +223,24 @@ public class Question extends AppCompatActivity {
                 return "";
         }
     }
+
+    private int getSubjectColor(String subject) {
+        switch (subject) {
+            case "mathematics":
+                return R.color.red;
+            case "geography":
+                return R.color.green;
+            case "history":
+                return R.color.yellow;
+            case "sports":
+                return R.color.blue;
+            case "sciences":
+                return R.color.purple;
+            case "random":
+                return R.color.dark_charcoal;
+            default:
+                return R.color.blue_midnight;
+        }
+    }
+
 }
