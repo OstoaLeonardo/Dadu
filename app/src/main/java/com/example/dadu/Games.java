@@ -19,14 +19,14 @@ public class Games extends AppCompatActivity {
         setContentView(R.layout.activity_games);
 
         // Crear la base de datos
-        /*DBHelper dbHelper = new DBHelper(this);
+        DBHelper dbHelper = new DBHelper(this);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         dbHelper.insertMathematics(db);
         dbHelper.insertGeography(db);
         dbHelper.insertHistory(db);
         dbHelper.insertSports(db);
         dbHelper.insertSciences(db);
-        db.close();*/
+        db.close();
 
         TopBarManager topBar = new TopBarManager();
         topBar.setupTopBar(this);

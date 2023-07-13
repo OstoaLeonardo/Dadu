@@ -16,10 +16,19 @@
             android:id="@+id/topAppBar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:menu="@menu/top_app_bar"
-            app:navigationIcon="@drawable/arrow_small_left" />
+            app:navigationIcon="@drawable/arrow_small_left"
+            app:titleCentered="true"
+            app:titleTextAppearance="@style/SubTitle"
+            app:titleTextColor="@color/dark_charcoal" />
 
     </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:indicatorDirectionLinear="leftToRight"
+        app:indicatorColor="@color/blue" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -30,16 +39,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingHorizontal="40dp"
-            android:paddingBottom="40dp">
-
-            <TextView
-                android:id="@+id/lblSubject"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="40dp"
-                android:text="@string/subject"
-                android:textAlignment="center"
-                android:textAppearance="@style/SubTitle" />
+            android:paddingVertical="30dp">
 
             <ImageView
                 android:id="@+id/imgQuestion"

@@ -1,7 +1,9 @@
 package com.example.dadu;
 
+import android.animation.ObjectAnimator;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,6 +14,7 @@ import androidx.core.content.ContextCompat;
 import com.bumptech.glide.Glide;
 import com.example.dadu.db.DBHelper;
 import com.example.dadu.db.DBManager;
+import com.google.android.material.progressindicator.LinearProgressIndicator;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Arrays;
@@ -20,18 +23,21 @@ import java.util.List;
 
 public class Question extends AppCompatActivity {
 
-    private TextView lblSubject;
     private Button btnAnswer1, btnAnswer2, btnAnswer3, btnAnswer4;
     private ImageView imgQuestion;
     private String tableName;
     private String[] questionData;
+    private LinearProgressIndicator progressBar;
+    private CountDownTimer countDownTimer;
+    private final long TIMER_DURATION = 15000;
+    private final int PROGRESS_BAR_MAX = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
 
-        lblSubject = findViewById(R.id.lblSubject);
+        progressBar = findViewById(R.id.progressBar);
         TextView lblQuestion = findViewById(R.id.lblQuestion);
         imgQuestion = findViewById(R.id.imgQuestion);
         btnAnswer1 = findViewById(R.id.btnAnswer1);
@@ -46,12 +52,11 @@ public class Question extends AppCompatActivity {
                 view -> onBackPressed()
         );
 
-        showSubject();
+        String subject = getIntent().getStringExtra("subject");
+        setTitle(getSubjectTitle(subject));
 
         DBHelper dbHelper = new DBHelper(this);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-
-        String subject = getIntent().getStringExtra("subject");
 
         tableName = getTableName(subject);
         questionData = DBManager.getRandomQuestion(db, tableName);
@@ -65,6 +70,8 @@ public class Question extends AppCompatActivity {
                 .into(imgQuestion);
 
         db.close();
+
+        startTimer();
 
         btnAnswer1.setOnClickListener(view -> {
             String selectedAnswer = btnAnswer1.getText().toString();
@@ -122,12 +129,11 @@ public class Question extends AppCompatActivity {
 
         if (selectedAnswer.equals(correctAnswer)) {
             message = "Respuesta correcta";
-            getNextRandomQuestion();
-
         } else {
             message = "Respuesta incorrecta";
         }
 
+        getNextRandomQuestion();
         Snackbar.make(findViewById(android.R.id.content), message, Snackbar.LENGTH_SHORT).show();
     }
 
@@ -147,18 +153,64 @@ public class Question extends AppCompatActivity {
                 .into(imgQuestion);
 
         db.close();
+
+        cancelTimer();
+        startTimer();
     }
 
-    private void showSubject() {
-        String subject = getIntent().getStringExtra("subject");
+    private void startTimer() {
+        progressBar.setMax(PROGRESS_BAR_MAX);
+        progressBar.setProgress(PROGRESS_BAR_MAX);
 
+        countDownTimer = new CountDownTimer(TIMER_DURATION, 100) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                long elapsedTime = TIMER_DURATION - millisUntilFinished;
+                int progress = (int) (elapsedTime * PROGRESS_BAR_MAX / TIMER_DURATION);
+                progressBar.setProgress(PROGRESS_BAR_MAX - progress, true);
+            }
+
+            @Override
+            public void onFinish() {
+                progressBar.setProgress(0, true);
+                Snackbar.make(findViewById(android.R.id.content), "Tiempo agotado", Snackbar.LENGTH_SHORT).show();
+                getNextRandomQuestion();
+            }
+        };
+
+        countDownTimer.start();
+    }
+
+    private void cancelTimer() {
+        if (countDownTimer != null) {
+            countDownTimer.cancel();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (countDownTimer != null) {
+            countDownTimer.cancel();
+        }
+    }
+
+    private String getSubjectTitle(String subject) {
         switch (subject) {
-            case "mathematics": lblSubject.setText(R.string.mathematics); break;
-            case "geography": lblSubject.setText(R.string.geography); break;
-            case "history": lblSubject.setText(R.string.history); break;
-            case "sports": lblSubject.setText(R.string.sports); break;
-            case "sciences": lblSubject.setText(R.string.natural_sciences); break;
-            case "random" : lblSubject.setText(R.string.random); break;
+            case "mathematics":
+                return getResources().getString(R.string.mathematics);
+            case "geography":
+                return getResources().getString(R.string.geography);
+            case "history":
+                return getResources().getString(R.string.history);
+            case "sports":
+                return getResources().getString(R.string.sports);
+            case "sciences":
+                return getResources().getString(R.string.natural_sciences);
+            case "random":
+                return getResources().getString(R.string.random);
+            default:
+                return "";
         }
     }
 }
