@@ -247,7 +247,11 @@ public class MainActivity extends AppCompatActivity {
             File imageFile = new File(imagePath);
             if (imageFile.exists()) {
                 Uri imageUri = Uri.fromFile(imageFile);
-                profileImage.setImageURI(imageUri);
+                Glide.with(this)
+                        .load(imageUri)
+                        .apply(RequestOptions.placeholderOf(defaultImageRes))
+                        .transition(DrawableTransitionOptions.withCrossFade())
+                        .into(profileImage);
             } else {
                 profileImage.setImageResource(defaultImageRes);
             }

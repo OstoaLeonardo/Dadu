@@ -1,41 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Games">
 
-    <LinearLayout
-        android:id="@+id/llTopBar"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingHorizontal="30dp"
-        android:paddingVertical="20dp">
+        android:background="?android:attr/colorBackground">
 
-        <Button
-            android:id="@+id/btnBack"
-            style="?attr/materialIconButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:icon="@drawable/arrow_small_left" />
-
-        <TextView
-            android:id="@+id/lblMail"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:text="@string/choose_game"
-            android:textAlignment="textEnd"
-            android:textAppearance="@style/Text" />
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topAppBar"
+                android:layout_width="wrap_content"
+                android:layout_height="?attr/actionBarSize"
+                app:menu="@menu/top_app_bar"
+                app:navigationIcon="@drawable/arrow_small_left" />
+
+            <TextView
+                android:id="@+id/lblMail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:layout_weight="1"
+                android:text="@string/choose_game"
+                android:textAlignment="textEnd"
+                android:textAppearance="@style/Text" />
+
+        </LinearLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/llTopBar" >
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,7 +57,9 @@
                 android:background="@drawable/bg_card_subjects"
                 android:backgroundTint="@color/dark_charcoal"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:onClick="goQuestion"
+                android:orientation="horizontal"
+                android:tag="random">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -87,7 +95,9 @@
                 android:background="@drawable/bg_card_subjects"
                 android:backgroundTint="@color/red"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:onClick="goQuestion"
+                android:orientation="horizontal"
+                android:tag="mathematics">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -123,7 +133,9 @@
                 android:background="@drawable/bg_card_subjects"
                 android:backgroundTint="@color/green"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:onClick="goQuestion"
+                android:orientation="horizontal"
+                android:tag="geography">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -159,7 +171,9 @@
                 android:background="@drawable/bg_card_subjects"
                 android:backgroundTint="@color/yellow"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:onClick="goQuestion"
+                android:orientation="horizontal"
+                android:tag="history">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -195,7 +209,9 @@
                 android:background="@drawable/bg_card_subjects"
                 android:backgroundTint="@color/blue"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:onClick="goQuestion"
+                android:orientation="horizontal"
+                android:tag="sports">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -231,7 +247,9 @@
                 android:background="@drawable/bg_card_subjects"
                 android:backgroundTint="@color/purple"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:onClick="goQuestion"
+                android:orientation="horizontal"
+                android:tag="sciences">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -262,4 +280,4 @@
 
     </ScrollView>
 
-</RelativeLayout>
+</LinearLayout>

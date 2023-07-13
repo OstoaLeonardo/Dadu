@@ -1,76 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="40dp"
+    android:orientation="vertical"
     tools:context=".Question">
 
-    <TextView
-        android:id="@+id/lblSubject"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:text="@string/subject"
-        android:textAlignment="center"
-        android:textAppearance="@style/SubTitle" />
+        android:background="?android:attr/colorBackground">
 
-    <ImageView
-        android:id="@+id/imgQuestion"
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:menu="@menu/top_app_bar"
+            app:navigationIcon="@drawable/arrow_small_left" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="210dp"
-        android:layout_below="@+id/lblSubject"
-        android:layout_marginBottom="50dp"
-        android:background="@drawable/bg_question_image" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/lblQuestion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/imgQuestion"
-        android:layout_marginBottom="50dp"
-        android:text="@string/question"
-        android:textAlignment="center"
-        android:textAppearance="@style/Body" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@+id/lblQuestion">
-
-        <Button
-            android:id="@+id/btnAnswer1"
-            style="@style/ButtonAnswer"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_button"
-            android:text="@string/answer1" />
+            android:orientation="vertical"
+            android:paddingHorizontal="40dp"
+            android:paddingBottom="40dp">
 
-        <Button
-            android:id="@+id/btnAnswer2"
-            style="@style/ButtonAnswer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_button"
-            android:text="@string/answer2" />
+            <TextView
+                android:id="@+id/lblSubject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:text="@string/subject"
+                android:textAlignment="center"
+                android:textAppearance="@style/SubTitle" />
 
-        <Button
-            android:id="@+id/btnAnswer3"
-            style="@style/ButtonAnswer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_button"
-            android:text="@string/answer3" />
+            <ImageView
+                android:id="@+id/imgQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/bg_question_image"
+                tools:ignore="ContentDescription" />
 
-        <Button
-            android:id="@+id/btnAnswer4"
-            style="@style/ButtonAnswer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_button"
-            android:text="@string/answer4" />
+            <TextView
+                android:id="@+id/lblQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:text="@string/question"
+                android:textAlignment="center"
+                android:textAppearance="@style/Text" />
 
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-</RelativeLayout>
+                <Button
+                    android:id="@+id/btnAnswer1"
+                    style="@style/ButtonAnswer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_button"
+                    android:text="@string/answer1" />
+
+                <Button
+                    android:id="@+id/btnAnswer2"
+                    style="@style/ButtonAnswer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_button"
+                    android:text="@string/answer2" />
+
+                <Button
+                    android:id="@+id/btnAnswer3"
+                    style="@style/ButtonAnswer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_button"
+                    android:text="@string/answer3" />
+
+                <Button
+                    android:id="@+id/btnAnswer4"
+                    style="@style/ButtonAnswer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_button"
+                    android:text="@string/answer4" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
